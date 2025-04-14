@@ -58,7 +58,8 @@ const isSubmitting = ref(false); // 是否正在提交评论
 const submitError = ref(null); // 提交评论时的错误信息
 const submitSuccess = ref(false); // 评论是否提交成功
 
-const API_BASE_URL = 'http://localhost:3000/api/comments'; // 后端 API 地址
+// const API_BASE_URL = 'http://localhost:3000/api/comments'; // 后端 API 地址
+const API_BASE_URL = '/api/comments'; // Use relative path
 
 // 获取评论
 const fetchComments = async (gameId) => {

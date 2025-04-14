@@ -48,7 +48,9 @@ const isSubmitting = ref(false);
 const hoverRating = ref(0); // Rating on hover
 const hasRated = ref(false); // Track if user has rated in this session
 
-const API_BASE_URL = 'http://localhost:3000/api/ratings';
+const API_BASE_URL = '/api/ratings'; // Use relative path for deployment
+
+const ratingData = ref(null);
 
 // Calculate display average (rounded to nearest 0.5 for star display maybe? or keep 1 decimal)
 const displayAverage = computed(() => parseFloat(averageRating.value)); // Keep one decimal
