@@ -2,13 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "comment-server/package.json",
+      "src": "comment-server/server.js",
       "use": "@vercel/node"
     },
     {
-      "src": "Escape-road-main/package.json",
+      "src": "Escape-road-main",
       "use": "@vercel/static-build",
-      "config": { "distDir": "Escape-road-main/dist" }
+      "config": { "distDir": "dist" }
     }
   ],
   "routes": [
