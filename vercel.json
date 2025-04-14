@@ -3,8 +3,7 @@
   "builds": [
     {
       "src": "comment-server/package.json",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["comment-server/**"] }
+      "use": "@vercel/node"
     },
     {
       "src": "Escape-road-main/package.json",
@@ -15,11 +14,14 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/comment-server/server.js"
+      "dest": "comment-server/server.js"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/Escape-road-main/$1"
+      "dest": "/index.html"
     }
   ]
 } 
