@@ -2,16 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "comment-server/server.js",
-      "use": "@vercel/node"
+      "src": "comment-server/package.json",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["comment-server/**"] }
     },
     {
       "src": "Escape-road-main/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "npm run build",
-        "outputDirectory": "dist"
-      }
+      "config": { "distDir": "Escape-road-main/dist" }
     }
   ],
   "routes": [
@@ -21,12 +19,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/Escape-road-main/$1",
-      "handle": "filesystem"
-    },
-    {
-      "src": "/.*",
-      "dest": "/Escape-road-main/index.html"
+      "dest": "/Escape-road-main/$1"
     }
   ]
 } 
