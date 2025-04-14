@@ -1,0 +1,25 @@
+# 后端依赖
+comment-server/node_modules/
+
+# 前端构建输出和缓存
+Escape-road-main/dist/
+Escape-road-main/.vite/
+Escape-road-main/.output/
+
+# 后端本地数据 (已弃用，建议忽略)
+comment-server/data/
+
+# 通用日志文件
+*.log
+logs/
+
+# 通用 Node 依赖 (更通用，可以覆盖子目录)
+node_modules/
+
+# IDE/OS 文件
+.idea/
+.vscode/
+*.suo
+*.user
+.DS_Store
+Thumbs.db

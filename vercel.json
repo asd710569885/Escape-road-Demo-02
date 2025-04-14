@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "comment-server/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "Escape-road-main/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/comment-server/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Escape-road-main/$1",
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/Escape-road-main/index.html"
+    }
+  ]
+} 
